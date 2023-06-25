@@ -9,7 +9,6 @@ let productSchema = new mongoose.Schema({
     },
   ],
 },{timestamps:true});
-
-let PRODUCT = mongoose.model("PRODUCT", productSchema);
+let PRODUCT = mongoose.model("MYPRODUCTSCHEMA,", productSchema);
 
 module.exports = PRODUCT;

@@ -84,11 +84,12 @@ async function deleteProduct(req, res) {
 //function to update the quantity
 async function updateQuantity(req, res) {
   try {
-    const { id, updateValue } = req.body;
+    const { id, updateValue } = req.params;
+    console.log(updateValue)
 
     let product = await PRODUCT.updateOne(
       { "products._id": id },
-      { $inc: { "products.$.quantity": value } }
+      { $inc: { "products.$.quantity": updateValue } }
     );
 
     if (!product) {
